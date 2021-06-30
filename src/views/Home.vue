@@ -1,18 +1,55 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <section id="dasboard">
+    <v-row class="mx-4">
+      <v-col>
+        <v-total-card :total='totalDownlloading' />
+      </v-col>
+      <v-col>
+        <v-total-card :total='totalUsers' />
+      </v-col>
+      <v-col>
+        <v-total-card :total='totalHystory' />
+      </v-col>
+    </v-row>
+  </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import VTotalCard from '../components/widget/Total'
 
 export default {
-  name: 'Home',
+  name: "Home",
+
   components: {
-    HelloWorld
+    VTotalCard
+  },
+
+  data() {
+    return {
+      totalDownlloading: {
+        title: 'Количество скачиваний',
+        counter: 536
+      },
+      totalUsers: {
+        title: 'Количество пользователей',
+        counter: 425
+      },
+      totalHystory: {
+        title: 'Количество публикаций',
+        counter: 136
+      }
+    }
   }
-}
+};
 </script>
+
+<style lang="scss">
+#dasboard {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+</style>
