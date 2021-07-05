@@ -6,7 +6,7 @@ const history = require('connect-history-api-fallback');
 
 app = express()
 
-//app.use('/', serveStatic(path.join(__dirname, '/dist')))
+app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
 app.use(history());
 
