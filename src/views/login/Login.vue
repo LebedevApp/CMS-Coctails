@@ -1,7 +1,13 @@
 <template>
   <v-row align="center" justify="center">
-    <v-card class="rounded-xl" dark color="rgba(0,0,0,0.8)" elevation="15" min-width="350">
-      <h1 class="text-center text-body-1 my-4 ">Вход в систему</h1>
+    <v-card
+      class="rounded-xl"
+      dark
+      color="rgba(0,0,0,0.8)"
+      elevation="15"
+      min-width="350"
+    >
+      <h1 class="text-center text-body-1 my-4">Вход в систему</h1>
       <v-divider></v-divider>
       <v-container>
         <v-form @submit.prevent="onSubmit" ref="form">
@@ -49,10 +55,10 @@
 </template>
 
 <script>
-import { required, email } from "vuelidate/lib/validators";
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
-  name: "Login",
+  name: 'Login',
 
   validations: {
     email: {
@@ -66,24 +72,24 @@ export default {
 
   data() {
     return {
-      email: "alko-account@info.com",
-      password: "123456789",
+      email: 'alko-account@info.com',
+      password: '123456789',
       loading: false,
-    };
+    }
   },
 
   methods: {
     getError(validations) {
-      const errors = [];
-      if (!validations.$dirty) return errors;
+      const errors = []
+      if (!validations.$dirty) return errors
       if (!validations.required) {
-        errors.push("Заполние поле");
-        return errors;
-      } else if (!validations.email && validations.hasOwnProperty("email")) {
-        errors.push("Введите Email");
-        return errors;
+        errors.push('Заполние поле')
+        return errors
+      } else if (!validations.email && validations.hasOwnProperty('email')) {
+        errors.push('Введите Email')
+        return errors
       }
-      return errors;
+      return errors
     },
     onSubmit() {
       if (this.$refs.form.validate()) {
@@ -91,5 +97,5 @@ export default {
       }
     },
   },
-};
+}
 </script>

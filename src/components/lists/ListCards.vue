@@ -9,9 +9,9 @@
       <v-card-item v-for="i in 20" :key="i" :id="i" />
     </v-list>
     <v-card class="mt-1">
-      <div >
+      <div>
         <v-pagination
-        color="green"
+          color="green"
           v-model="page"
           :length="15"
           :total-visible="8"
@@ -21,25 +21,26 @@
   </v-card>
 </template>
 
+
 <script>
-import VCardItem from "../../components/lists/Card";
+import VCardItem from '../../components/lists/Card'
 export default {
-  name: "card",
+  name: 'card',
 
   components: {
     VCardItem,
   },
 
   created() {
-      console.log(window.screen)
+    console.log(window.screen)
   },
 
   data() {
-      return {
-          page: 1
-      }
-  }
-};
+    return {
+      page: 1,
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
