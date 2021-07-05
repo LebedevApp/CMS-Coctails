@@ -41,6 +41,11 @@ const routes = [
     name: "Options",
     component: () => import("@/views/options/Options"),
   },
+  {
+    path: "/ingredients/:id",
+    name: "Options",
+    component: () => import("@/views/Ingredients/Id"),
+  },
 ];
 
 const router = new VueRouter({

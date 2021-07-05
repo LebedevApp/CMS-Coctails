@@ -25,9 +25,15 @@ export default {
 <style lang="scss" scoped>
 .bg {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
 
   position: relative;
+}
+
+@media (max-height: 400px) {
+.bg{
+  height: 140vh;
+}
 }
 </style>
